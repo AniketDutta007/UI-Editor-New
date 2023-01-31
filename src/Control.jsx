@@ -296,7 +296,11 @@ function addShape(shape, color, canvas) {
 				width: 100,
 				height: 50,
 				fill: `${color}`,
+				hasControls: true,
 			});
+			rect.onSelect = function () {
+				canvas.bringToFront(this);
+			};
 			canvas.add(rect);
 			break;
 		case 'square':
@@ -307,6 +311,9 @@ function addShape(shape, color, canvas) {
 				height: 100,
 				fill: `${color}`,
 			});
+			square.onSelect = function () {
+				canvas.bringToFront(this);
+			};
 			canvas.add(square);
 			break;
 		case 'circle':
@@ -316,6 +323,9 @@ function addShape(shape, color, canvas) {
 				radius: 50,
 				fill: `${color}`,
 			});
+			circle.onSelect = function () {
+				canvas.bringToFront(this);
+			};
 			canvas.add(circle);
 			break;
 		case 'triangle':
@@ -326,6 +336,9 @@ function addShape(shape, color, canvas) {
 				height: 86.6,
 				fill: `${color}`,
 			});
+			triangle.onSelect = function () {
+				canvas.bringToFront(this);
+			};
 			canvas.add(triangle);
 			break;
 		case 'elipse':
@@ -336,6 +349,9 @@ function addShape(shape, color, canvas) {
 				ry: 50,
 				fill: `${color}`,
 			});
+			elipse.onSelect = function () {
+				canvas.bringToFront(this);
+			};
 			canvas.add(elipse);
 			break;
 	}
@@ -361,6 +377,9 @@ function addText(
 		fontStyle: isItalic ? 'italic' : '',
 		underline: isUnderline,
 	});
+	text.onSelect = function () {
+		canvas.bringToFront(this);
+	};
 	canvas.add(text);
 }
 
@@ -371,6 +390,9 @@ function addImage(url, canvas) {
 			img.scale(1 / i);
 			i++;
 		}
+		img.onSelect = function () {
+			canvas.bringToFront(this);
+		};
 		canvas.add(img);
 		canvas.renderAll();
 	});
