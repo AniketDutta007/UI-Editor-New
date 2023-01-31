@@ -11,8 +11,7 @@ import {
 	Container,
 } from 'react-bootstrap';
 import { RiBringToFront, RiSendToBack, RiUnderline } from 'react-icons/ri';
-import { FaBold, FaItalic, FiItalic } from 'react-icons/fa';
-// FaBold, FiItalic
+import { FaBold, FaItalic } from 'react-icons/fa';
 
 function Control(props) {
 	const [shape, setShape] = useState('rectangle');
